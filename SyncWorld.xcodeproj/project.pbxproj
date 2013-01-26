@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 609B93AF28211A0B00F6B7CA /* TKMesh.m */; };
 		6DB34F9216B3879300452BDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9116B3879300452BDF /* UIKit.framework */; };
 		6DB34F9416B3879300452BDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9316B3879300452BDF /* Foundation.framework */; };
 		6DB34F9616B3879300452BDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9516B3879300452BDF /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		609B93AF28211A0B00F6B7CA /* TKMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMesh.m; sourceTree = "<group>"; };
+		609B96DF131AC4545C4698C4 /* TKMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMesh.h; sourceTree = "<group>"; };
 		6DB34F8D16B3879300452BDF /* SyncWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB34F9116B3879300452BDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DB34F9316B3879300452BDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,8 @@
 				6DB34FB416B3879300452BDF /* TKViewController_iPhone.xib */,
 				6DB34FB716B3879300452BDF /* TKViewController_iPad.xib */,
 				6DB34F9C16B3879300452BDF /* Supporting Files */,
+				609B93AF28211A0B00F6B7CA /* TKMesh.m */,
+				609B96DF131AC4545C4698C4 /* TKMesh.h */,
 			);
 			path = SyncWorld;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				6DB34FA216B3879300452BDF /* main.m in Sources */,
 				6DB34FA616B3879300452BDF /* TKAppDelegate.m in Sources */,
 				6DB34FB316B3879300452BDF /* TKViewController.m in Sources */,
+				609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +293,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyncWorld/SyncWorld-Prefix.pch";
 				INFOPLIST_FILE = "SyncWorld/SyncWorld-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -322,6 +329,7 @@
 				6DB34FBE16B3879300452BDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
