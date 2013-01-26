@@ -23,6 +23,10 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    // Setup audio
+    
+    
     return YES;
 }
 

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 609B93AF28211A0B00F6B7CA /* TKMesh.m */; };
+		6D9066FC16B47B9A00BDE89B /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6D9066FD16B47B9A00BDE89B /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F716B47B9A00BDE89B /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6D9066FE16B47B9A00BDE89B /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F916B47B9A00BDE89B /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6D9066FF16B47B9A00BDE89B /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066FB16B47B9A00BDE89B /* RingBuffer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6D90670316B47C5900BDE89B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D90670116B47C5900BDE89B /* AudioToolbox.framework */; };
+		6D90670616B47CAA00BDE89B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D90670516B47CAA00BDE89B /* Accelerate.framework */; };
 		6DB34F9216B3879300452BDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9116B3879300452BDF /* UIKit.framework */; };
 		6DB34F9416B3879300452BDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9316B3879300452BDF /* Foundation.framework */; };
 		6DB34F9616B3879300452BDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9516B3879300452BDF /* CoreGraphics.framework */; };
@@ -21,7 +27,7 @@
 		6DB34FAC16B3879300452BDF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DB34FAB16B3879300452BDF /* Default-568h@2x.png */; };
 		6DB34FAE16B3879300452BDF /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 6DB34FAD16B3879300452BDF /* Shader.fsh */; };
 		6DB34FB016B3879300452BDF /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 6DB34FAF16B3879300452BDF /* Shader.vsh */; };
-		6DB34FB316B3879300452BDF /* TKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB34FB216B3879300452BDF /* TKViewController.m */; };
+		6DB34FB316B3879300452BDF /* TKViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6DB34FB216B3879300452BDF /* TKViewController.mm */; };
 		6DB34FB616B3879300452BDF /* TKViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB34FB416B3879300452BDF /* TKViewController_iPhone.xib */; };
 		6DB34FB916B3879300452BDF /* TKViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB34FB716B3879300452BDF /* TKViewController_iPad.xib */; };
 /* End PBXBuildFile section */
@@ -29,6 +35,17 @@
 /* Begin PBXFileReference section */
 		609B93AF28211A0B00F6B7CA /* TKMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMesh.m; sourceTree = "<group>"; };
 		609B96DF131AC4545C4698C4 /* TKMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMesh.h; sourceTree = "<group>"; };
+		6D9066F416B47B9A00BDE89B /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		6D9066F616B47B9A00BDE89B /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		6D9066F716B47B9A00BDE89B /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		6D9066F816B47B9A00BDE89B /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		6D9066F916B47B9A00BDE89B /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		6D9066FA16B47B9A00BDE89B /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		6D9066FB16B47B9A00BDE89B /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
+		6D90670116B47C5900BDE89B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6D90670216B47C5900BDE89B /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		6D90670516B47CAA00BDE89B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6DB34F8D16B3879300452BDF /* SyncWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB34F9116B3879300452BDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DB34F9316B3879300452BDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,7 +64,7 @@
 		6DB34FAD16B3879300452BDF /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		6DB34FAF16B3879300452BDF /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		6DB34FB116B3879300452BDF /* TKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKViewController.h; sourceTree = "<group>"; };
-		6DB34FB216B3879300452BDF /* TKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKViewController.m; sourceTree = "<group>"; };
+		6DB34FB216B3879300452BDF /* TKViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TKViewController.mm; sourceTree = "<group>"; };
 		6DB34FB516B3879300452BDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TKViewController_iPhone.xib; sourceTree = "<group>"; };
 		6DB34FB816B3879300452BDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TKViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D90670616B47CAA00BDE89B /* Accelerate.framework in Frameworks */,
+				6D90670316B47C5900BDE89B /* AudioToolbox.framework in Frameworks */,
 				6DB34F9216B3879300452BDF /* UIKit.framework in Frameworks */,
 				6DB34F9416B3879300452BDF /* Foundation.framework in Frameworks */,
 				6DB34F9616B3879300452BDF /* CoreGraphics.framework in Frameworks */,
@@ -68,9 +87,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D9066F316B47B9A00BDE89B /* Novocaine */ = {
+			isa = PBXGroup;
+			children = (
+				6D9066F416B47B9A00BDE89B /* AudioFileReader.h */,
+				6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */,
+				6D9066F616B47B9A00BDE89B /* AudioFileWriter.h */,
+				6D9066F716B47B9A00BDE89B /* AudioFileWriter.m */,
+				6D9066F816B47B9A00BDE89B /* Novocaine.h */,
+				6D9066F916B47B9A00BDE89B /* Novocaine.m */,
+				6D9066FA16B47B9A00BDE89B /* RingBuffer.h */,
+				6D9066FB16B47B9A00BDE89B /* RingBuffer.mm */,
+			);
+			name = Novocaine;
+			path = novocaine/Novocaine;
+			sourceTree = "<group>";
+		};
 		6DB34F8216B3879300452BDF = {
 			isa = PBXGroup;
 			children = (
+				6D90670516B47CAA00BDE89B /* Accelerate.framework */,
+				6D90670116B47C5900BDE89B /* AudioToolbox.framework */,
+				6D90670216B47C5900BDE89B /* AudioUnit.framework */,
+				6D9066F316B47B9A00BDE89B /* Novocaine */,
 				6DB34F9B16B3879300452BDF /* SyncWorld */,
 				6DB34F9016B3879300452BDF /* Frameworks */,
 				6DB34F8E16B3879300452BDF /* Products */,
@@ -105,7 +144,7 @@
 				6DB34FAD16B3879300452BDF /* Shader.fsh */,
 				6DB34FAF16B3879300452BDF /* Shader.vsh */,
 				6DB34FB116B3879300452BDF /* TKViewController.h */,
-				6DB34FB216B3879300452BDF /* TKViewController.m */,
+				6DB34FB216B3879300452BDF /* TKViewController.mm */,
 				6DB34FB416B3879300452BDF /* TKViewController_iPhone.xib */,
 				6DB34FB716B3879300452BDF /* TKViewController_iPad.xib */,
 				6DB34F9C16B3879300452BDF /* Supporting Files */,
@@ -201,8 +240,12 @@
 			files = (
 				6DB34FA216B3879300452BDF /* main.m in Sources */,
 				6DB34FA616B3879300452BDF /* TKAppDelegate.m in Sources */,
-				6DB34FB316B3879300452BDF /* TKViewController.m in Sources */,
+				6DB34FB316B3879300452BDF /* TKViewController.mm in Sources */,
 				609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */,
+				6D9066FC16B47B9A00BDE89B /* AudioFileReader.mm in Sources */,
+				6D9066FD16B47B9A00BDE89B /* AudioFileWriter.m in Sources */,
+				6D9066FE16B47B9A00BDE89B /* Novocaine.m in Sources */,
+				6D9066FF16B47B9A00BDE89B /* RingBuffer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
