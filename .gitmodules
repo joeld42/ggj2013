@@ -1,0 +1,3 @@
+[submodule "novocaine"]
+	path = novocaine
+	url = https://github.com/alexbw/novocaine.git
