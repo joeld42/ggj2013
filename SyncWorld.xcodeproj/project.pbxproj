@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 609B93AF28211A0B00F6B7CA /* TKMesh.m */; };
 		6D9066FC16B47B9A00BDE89B /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9066FD16B47B9A00BDE89B /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F716B47B9A00BDE89B /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9066FE16B47B9A00BDE89B /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F916B47B9A00BDE89B /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9066FF16B47B9A00BDE89B /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066FB16B47B9A00BDE89B /* RingBuffer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D90670316B47C5900BDE89B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D90670116B47C5900BDE89B /* AudioToolbox.framework */; };
 		6D90670616B47CAA00BDE89B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D90670516B47CAA00BDE89B /* Accelerate.framework */; };
+		6D90671216B4919B00BDE89B /* AlienNoise_Dm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670916B4919B00BDE89B /* AlienNoise_Dm.wav */; };
+		6D90671316B4919B00BDE89B /* Am_descend_guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670A16B4919B00BDE89B /* Am_descend_guitar.wav */; };
+		6D90671416B4919B00BDE89B /* arp_Dm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670B16B4919B00BDE89B /* arp_Dm.wav */; };
+		6D90671516B4919B00BDE89B /* C_Am_Guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670C16B4919B00BDE89B /* C_Am_Guitar.wav */; };
+		6D90671616B4919B00BDE89B /* drums_ad3_007_120bpm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670D16B4919B00BDE89B /* drums_ad3_007_120bpm.wav */; };
+		6D90671716B4919B00BDE89B /* GGJ13_Theme.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670E16B4919B00BDE89B /* GGJ13_Theme.wav */; };
+		6D90671816B4919B00BDE89B /* Piano_Dm_F_Am.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90670F16B4919B00BDE89B /* Piano_Dm_F_Am.wav */; };
+		6D90671916B4919B00BDE89B /* piano_notes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90671016B4919B00BDE89B /* piano_notes.wav */; };
+		6D90671A16B4919B00BDE89B /* synthHorns_CMaj7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90671116B4919B00BDE89B /* synthHorns_CMaj7.wav */; };
+		6D90671D16B495C600BDE89B /* SyncWorldGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90671C16B495C600BDE89B /* SyncWorldGame.mm */; };
+		6D90672016B497D200BDE89B /* SampleBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90671F16B497D200BDE89B /* SampleBuffer.mm */; };
 		6DB34F9216B3879300452BDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9116B3879300452BDF /* UIKit.framework */; };
 		6DB34F9416B3879300452BDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9316B3879300452BDF /* Foundation.framework */; };
 		6DB34F9616B3879300452BDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9516B3879300452BDF /* CoreGraphics.framework */; };
@@ -33,8 +43,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		609B93AF28211A0B00F6B7CA /* TKMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMesh.m; sourceTree = "<group>"; };
-		609B96DF131AC4545C4698C4 /* TKMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMesh.h; sourceTree = "<group>"; };
 		6D9066F416B47B9A00BDE89B /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
 		6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
 		6D9066F616B47B9A00BDE89B /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
@@ -46,6 +54,19 @@
 		6D90670116B47C5900BDE89B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6D90670216B47C5900BDE89B /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		6D90670516B47CAA00BDE89B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6D90670916B4919B00BDE89B /* AlienNoise_Dm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AlienNoise_Dm.wav; path = gamedata/samples/AlienNoise_Dm.wav; sourceTree = "<group>"; };
+		6D90670A16B4919B00BDE89B /* Am_descend_guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Am_descend_guitar.wav; path = gamedata/samples/Am_descend_guitar.wav; sourceTree = "<group>"; };
+		6D90670B16B4919B00BDE89B /* arp_Dm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = arp_Dm.wav; path = gamedata/samples/arp_Dm.wav; sourceTree = "<group>"; };
+		6D90670C16B4919B00BDE89B /* C_Am_Guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = C_Am_Guitar.wav; path = gamedata/samples/C_Am_Guitar.wav; sourceTree = "<group>"; };
+		6D90670D16B4919B00BDE89B /* drums_ad3_007_120bpm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = drums_ad3_007_120bpm.wav; path = gamedata/samples/drums_ad3_007_120bpm.wav; sourceTree = "<group>"; };
+		6D90670E16B4919B00BDE89B /* GGJ13_Theme.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = GGJ13_Theme.wav; path = gamedata/samples/GGJ13_Theme.wav; sourceTree = "<group>"; };
+		6D90670F16B4919B00BDE89B /* Piano_Dm_F_Am.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Piano_Dm_F_Am.wav; path = gamedata/samples/Piano_Dm_F_Am.wav; sourceTree = "<group>"; };
+		6D90671016B4919B00BDE89B /* piano_notes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = piano_notes.wav; path = gamedata/samples/piano_notes.wav; sourceTree = "<group>"; };
+		6D90671116B4919B00BDE89B /* synthHorns_CMaj7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synthHorns_CMaj7.wav; path = gamedata/samples/synthHorns_CMaj7.wav; sourceTree = "<group>"; };
+		6D90671B16B495C600BDE89B /* SyncWorldGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncWorldGame.h; sourceTree = "<group>"; };
+		6D90671C16B495C600BDE89B /* SyncWorldGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SyncWorldGame.mm; sourceTree = "<group>"; };
+		6D90671E16B497D200BDE89B /* SampleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleBuffer.h; sourceTree = "<group>"; };
+		6D90671F16B497D200BDE89B /* SampleBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleBuffer.mm; sourceTree = "<group>"; };
 		6DB34F8D16B3879300452BDF /* SyncWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB34F9116B3879300452BDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DB34F9316B3879300452BDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,12 +124,34 @@
 			path = novocaine/Novocaine;
 			sourceTree = "<group>";
 		};
+		6D90670716B4915900BDE89B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D90670816B4916300BDE89B /* Samples */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D90670816B4916300BDE89B /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				6D90670916B4919B00BDE89B /* AlienNoise_Dm.wav */,
+				6D90670A16B4919B00BDE89B /* Am_descend_guitar.wav */,
+				6D90670B16B4919B00BDE89B /* arp_Dm.wav */,
+				6D90670C16B4919B00BDE89B /* C_Am_Guitar.wav */,
+				6D90670D16B4919B00BDE89B /* drums_ad3_007_120bpm.wav */,
+				6D90670E16B4919B00BDE89B /* GGJ13_Theme.wav */,
+				6D90670F16B4919B00BDE89B /* Piano_Dm_F_Am.wav */,
+				6D90671016B4919B00BDE89B /* piano_notes.wav */,
+				6D90671116B4919B00BDE89B /* synthHorns_CMaj7.wav */,
+			);
+			name = Samples;
+			sourceTree = "<group>";
+		};
 		6DB34F8216B3879300452BDF = {
 			isa = PBXGroup;
 			children = (
-				6D90670516B47CAA00BDE89B /* Accelerate.framework */,
-				6D90670116B47C5900BDE89B /* AudioToolbox.framework */,
-				6D90670216B47C5900BDE89B /* AudioUnit.framework */,
+				6D90670716B4915900BDE89B /* Resources */,
 				6D9066F316B47B9A00BDE89B /* Novocaine */,
 				6DB34F9B16B3879300452BDF /* SyncWorld */,
 				6DB34F9016B3879300452BDF /* Frameworks */,
@@ -127,6 +170,9 @@
 		6DB34F9016B3879300452BDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D90670516B47CAA00BDE89B /* Accelerate.framework */,
+				6D90670116B47C5900BDE89B /* AudioToolbox.framework */,
+				6D90670216B47C5900BDE89B /* AudioUnit.framework */,
 				6DB34F9116B3879300452BDF /* UIKit.framework */,
 				6DB34F9316B3879300452BDF /* Foundation.framework */,
 				6DB34F9516B3879300452BDF /* CoreGraphics.framework */,
@@ -139,6 +185,7 @@
 		6DB34F9B16B3879300452BDF /* SyncWorld */ = {
 			isa = PBXGroup;
 			children = (
+				6DB34F9C16B3879300452BDF /* Supporting Files */,
 				6DB34FA416B3879300452BDF /* TKAppDelegate.h */,
 				6DB34FA516B3879300452BDF /* TKAppDelegate.m */,
 				6DB34FAD16B3879300452BDF /* Shader.fsh */,
@@ -147,9 +194,10 @@
 				6DB34FB216B3879300452BDF /* TKViewController.mm */,
 				6DB34FB416B3879300452BDF /* TKViewController_iPhone.xib */,
 				6DB34FB716B3879300452BDF /* TKViewController_iPad.xib */,
-				6DB34F9C16B3879300452BDF /* Supporting Files */,
-				609B93AF28211A0B00F6B7CA /* TKMesh.m */,
-				609B96DF131AC4545C4698C4 /* TKMesh.h */,
+				6D90671B16B495C600BDE89B /* SyncWorldGame.h */,
+				6D90671C16B495C600BDE89B /* SyncWorldGame.mm */,
+				6D90671E16B497D200BDE89B /* SampleBuffer.h */,
+				6D90671F16B497D200BDE89B /* SampleBuffer.mm */,
 			);
 			path = SyncWorld;
 			sourceTree = "<group>";
@@ -228,6 +276,15 @@
 				6DB34FB016B3879300452BDF /* Shader.vsh in Resources */,
 				6DB34FB616B3879300452BDF /* TKViewController_iPhone.xib in Resources */,
 				6DB34FB916B3879300452BDF /* TKViewController_iPad.xib in Resources */,
+				6D90671216B4919B00BDE89B /* AlienNoise_Dm.wav in Resources */,
+				6D90671316B4919B00BDE89B /* Am_descend_guitar.wav in Resources */,
+				6D90671416B4919B00BDE89B /* arp_Dm.wav in Resources */,
+				6D90671516B4919B00BDE89B /* C_Am_Guitar.wav in Resources */,
+				6D90671616B4919B00BDE89B /* drums_ad3_007_120bpm.wav in Resources */,
+				6D90671716B4919B00BDE89B /* GGJ13_Theme.wav in Resources */,
+				6D90671816B4919B00BDE89B /* Piano_Dm_F_Am.wav in Resources */,
+				6D90671916B4919B00BDE89B /* piano_notes.wav in Resources */,
+				6D90671A16B4919B00BDE89B /* synthHorns_CMaj7.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +298,12 @@
 				6DB34FA216B3879300452BDF /* main.m in Sources */,
 				6DB34FA616B3879300452BDF /* TKAppDelegate.m in Sources */,
 				6DB34FB316B3879300452BDF /* TKViewController.mm in Sources */,
-				609B96E4334FD05BE0DAEC24 /* TKMesh.m in Sources */,
 				6D9066FC16B47B9A00BDE89B /* AudioFileReader.mm in Sources */,
 				6D9066FD16B47B9A00BDE89B /* AudioFileWriter.m in Sources */,
 				6D9066FE16B47B9A00BDE89B /* Novocaine.m in Sources */,
 				6D9066FF16B47B9A00BDE89B /* RingBuffer.mm in Sources */,
+				6D90671D16B495C600BDE89B /* SyncWorldGame.mm in Sources */,
+				6D90672016B497D200BDE89B /* SampleBuffer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

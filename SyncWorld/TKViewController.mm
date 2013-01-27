@@ -7,9 +7,7 @@
 //
 
 #import "TKViewController.h"
-
-#import "Novocaine.h"
-#import "RingBuffer.h"
+#import "SyncWorldGame.h"
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
@@ -87,9 +85,6 @@ GLfloat gCubeVertexData[216] =
     GLuint _vertexArray;
     GLuint _vertexBuffer;
     
-    RingBuffer *ringBuffer;
-    Novocaine *audioManager;
-//    AudioFileReader *fileReader;
 }
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
@@ -109,38 +104,8 @@ GLfloat gCubeVertexData[216] =
 {
     [super viewWillAppear:animated];
     
-    ringBuffer = new RingBuffer(32768, 2);
-    audioManager = [Novocaine audioManager];
-
-    // SIGNAL GENERATOR!
-    __block float frequency = 200.0;
-    __block float freq2 = 200.001;
-    __block float phase = 0.0;
-    __block float phase2 = 0.0;
-    [audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
-     {
-
-         float samplingRate = audioManager.samplingRate;
-         for (int i=0; i < numFrames; ++i)
-         {
-             for (int iChannel = 0; iChannel < numChannels; ++iChannel)
-             {
-                 float theta = phase * M_PI * 2;
-                 float theta2 = phase2 * M_PI * 2;
-                 float osc1 = sin(theta);
-                 float osc2 = sin(theta2);
-                 data[i*numChannels + iChannel] = (osc1 + osc2) * 0.25;
-             }
-
-             phase += 1.0 / (samplingRate / frequency);
-             if (phase > 1.0) phase = -1.0;
-
-             phase2 += 1.0 / (samplingRate / freq2);
-             if (phase2 > 1.0) phase2 = -1.0;
-
-             
-         }
-     }];
+    // Start up the audio
+    [[SyncWorldGame sharedInstance] startAudio];
 }
 
 - (void)viewDidLoad
