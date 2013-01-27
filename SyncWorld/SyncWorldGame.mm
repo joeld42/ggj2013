@@ -23,6 +23,7 @@
     
     GLuint _progSoundCtr;
     GLuint _uparamSoundCtr_modelViewProjection;
+    GLuint _uparamSoundCtr_baseTex;
 
     GLuint _progDecal;
     GLuint _uparamDecal_modelViewProjection;
@@ -136,6 +137,8 @@
     
     _progSoundCtr = loadShader( "SyncWorld.SoundCtr");
     _uparamSoundCtr_modelViewProjection = glGetUniformLocation(_progSoundCtr, "modelViewProjectionMatrix");
+    _uparamSoundCtr_baseTex = glGetUniformLocation( _progSoundCtr, "sampler_baseTex");
+
     NSLog( @"Loaded shader _progSoundCtr (%d)", _progSoundCtr );
     
     _progDecal = loadShader( "SyncWorld.Decal");
@@ -147,6 +150,12 @@
     
     // Init samples
     NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"GGJ13_Theme" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"drums_ad3_007_120bpm" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"piano_notes" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"170406__wind-chimes" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"18749__lg__copier04" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"50405__daddoit__chimes-part-6" ofType:@"wav"];
+
     NSLog( @"Sample path is %@", samplePath );
     _testSample = [[SampleBuffer alloc] initFromFile:samplePath];
 
@@ -189,7 +198,9 @@
     // Draw the waveform parts
     glUseProgram( _progSoundCtr );
     glUniformMatrix4fv( _uparamSoundCtr_modelViewProjection, 1, 0, _modelViewProjectionMatrix.m);
-    
+    glUniform1i( _uparamSoundCtr_baseTex, 0 );
+
+
     for (SoundCenter *ctr in _soundCtrs)
     {
         [ctr drawWaveform];

@@ -55,7 +55,7 @@ struct SoundCenterVert
         self.sample = buffer;
 
         self.center = GLKVector2Make( 512.0, 369.0 );
-        self.radius = 50.0;
+        self.radius = 150.0;
         _dirty = YES;
     }
     return self;
@@ -68,7 +68,7 @@ struct SoundCenterVert
         [self _build];
     }
     
-    NSLog( @"Drawing soundCenter Icon: (vbo %d)", _vboIcon);
+    //NSLog( @"Drawing soundCenter Icon: (vbo %d)", _vboIcon);
     
     glBindVertexArrayOES(_vboIcon);
     
@@ -91,6 +91,8 @@ struct SoundCenterVert
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+
+    glBindTexture(GL_TEXTURE_2D, _sample.texWaveformPreview );
     
     glDrawArrays(GL_TRIANGLE_STRIP, 0, (NUM_SEGMENTS * 2) );
     
@@ -176,9 +178,7 @@ struct SoundCenterVert
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(SoundCenterVert), BUFFER_OFFSET(8));
     
-    glBindVertexArrayOES(0);
-
-    
+    glBindVertexArrayOES(0);    
 }
 
 @end

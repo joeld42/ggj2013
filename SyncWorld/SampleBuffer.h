@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) float *data;
 
 // waveform preview
-// todo
+@property (nonatomic, assign) GLuint texWaveformPreview;
 
 - (id) initFromFile: (NSString*)filename;
 

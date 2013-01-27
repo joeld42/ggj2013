@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <stdint.h>
 
 #include "gl_util.h"
 
@@ -64,7 +65,59 @@ int _checkForGLErrors( const char *s, const char * file, int line )
         counter++ ;
     }
     return 0;
+}
+
+//+ (GLuint)makeGLTexture:(void*)data width:(uint32_t)width height:(uint32_t)height convert5551:(BOOL)doConvert
+GLuint makeGLTexture( void *data, uint32_t width, uint32_t height, bool convert5551 )
+{
+    GLuint texId;
+
+    // Convert 8888 texture to 5551 in-place
+    if (convert5551)
+    {
+        uint8_t *src = (uint8_t*)data;
+        uint16_t *dest = (uint16_t *)data;
+
+        for (int j=0; j < height; j++)
+        {
+            for (int i=0; i < width; i++)
+            {
+                uint8_t r,g,b,a;
+                r = src[0];
+                g = src[1];
+                b = src[2];
+                a = src[3];
+
+                *dest = ((r>>3)<<11) | ((g>>3)<<6) | ((b>>3)<<1) | (a>>7);
+
+                dest++;
+                src += 4;
+            }
+        }
+    }
+
+    glGenTextures(1, &texId );
+    glBindTexture(GL_TEXTURE_2D, texId);
+
+    if (convert5551)
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1, data);
+    }
+    else
+    {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    }
+
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+
+    glGenerateMipmapOES(GL_TEXTURE_2D);
+
+    CHECKGL( "makeGLTexture");
+
+    return texId;
 
 }
+
 
 
