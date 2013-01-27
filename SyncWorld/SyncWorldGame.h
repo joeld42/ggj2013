@@ -12,6 +12,10 @@
 
 - (void) startAudio;
 
+// game loop
+- (void) update: (CFTimeInterval)dt;
+- (void) render;
+
 + (SyncWorldGame*) sharedInstance;
 
 @end

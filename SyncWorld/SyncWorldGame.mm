@@ -9,15 +9,25 @@
 #import "RingBuffer.h"
 #import "SyncWorldGame.h"
 #import "SampleBuffer.h"
+#import "SoundCenter.h"
+#import "gl_util.h"
 
 @interface SyncWorldGame ()
 {
+    BOOL _doneInit;
+
     RingBuffer *_ringBuffer;
     Novocaine *_audioManager;
     //    AudioFileReader *fileReader;
 
     SampleBuffer *_testSample;
+
+    NSMutableArray *_soundCtrs;
+
 }
+
+- (void) _initGame;
+
 @end
 
 @implementation SyncWorldGame
@@ -42,7 +52,11 @@
     // Load our samples
 //    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"GGJ13_Theme" ofType:@"wav"];
 //    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"drums_ad3_007_120bpm" ofType:@"wav"];
-    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"piano_notes" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"piano_notes" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"170406__wind-chimes" ofType:@"wav"];
+//    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"18749__lg__copier04" ofType:@"wav"];
+    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"50405__daddoit__chimes-part-6" ofType:@"wav"];
+    
     NSLog( @"Sample path is %@", samplePath );
     _testSample = [[SampleBuffer alloc] initFromFile:samplePath];
     
@@ -92,5 +106,45 @@
 //         }
 //     }];
 }
+
+- (void)_initGame
+{
+    _doneInit = YES;
+
+    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"GGJ13_Theme" ofType:@"wav"];
+    
+    NSLog( @"Sample path is %@", samplePath );
+    _testSample = [[SampleBuffer alloc] initFromFile:samplePath];
+
+    // Make a SoundCenter from this
+    SoundCenter *ctrHeart = [[SoundCenter alloc] initWithSample:_testSample];
+    
+    // Our centers
+    _soundCtrs = [NSMutableArray array];
+    [_soundCtrs addObject:ctrHeart ];
+}
+
+- (void) update: (CFTimeInterval)dt
+{
+//    NSLog( @"update: %f", dt );
+}
+
+- (void) render
+{
+//    NSLog( @"render" );
+    CHECKGL( "render");
+
+    // Init first render (GL ctx active)
+    if (!_doneInit) [self _initGame];
+
+    // Draw all of the sound centers
+    for (SoundCenter *ctr in _soundCtrs)
+    {
+        [ctr draw];
+    }
+
+    CHECKGL( "render done");
+}
+
 
 @end

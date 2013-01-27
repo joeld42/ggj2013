@@ -24,6 +24,12 @@
 		6D90671A16B4919B00BDE89B /* synthHorns_CMaj7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90671116B4919B00BDE89B /* synthHorns_CMaj7.wav */; };
 		6D90671D16B495C600BDE89B /* SyncWorldGame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90671C16B495C600BDE89B /* SyncWorldGame.mm */; };
 		6D90672016B497D200BDE89B /* SampleBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90671F16B497D200BDE89B /* SampleBuffer.mm */; };
+		6D90672416B4AAF100BDE89B /* 18749__lg__copier04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90672116B4AAF100BDE89B /* 18749__lg__copier04.wav */; };
+		6D90672516B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90672216B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav */; };
+		6D90672616B4AAF100BDE89B /* 170406__wind-chimes.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6D90672316B4AAF100BDE89B /* 170406__wind-chimes.wav */; };
+		6D90672916B4AD5B00BDE89B /* Granulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90672816B4AD5B00BDE89B /* Granulator.mm */; };
+		6D90672C16B4C06400BDE89B /* SoundCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D90672B16B4C06400BDE89B /* SoundCenter.mm */; };
+		6D90673816B4FAF000BDE89B /* gl_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D90673616B4FAF000BDE89B /* gl_util.cpp */; };
 		6DB34F9216B3879300452BDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9116B3879300452BDF /* UIKit.framework */; };
 		6DB34F9416B3879300452BDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9316B3879300452BDF /* Foundation.framework */; };
 		6DB34F9616B3879300452BDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB34F9516B3879300452BDF /* CoreGraphics.framework */; };
@@ -67,6 +73,15 @@
 		6D90671C16B495C600BDE89B /* SyncWorldGame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SyncWorldGame.mm; sourceTree = "<group>"; };
 		6D90671E16B497D200BDE89B /* SampleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleBuffer.h; sourceTree = "<group>"; };
 		6D90671F16B497D200BDE89B /* SampleBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleBuffer.mm; sourceTree = "<group>"; };
+		6D90672116B4AAF100BDE89B /* 18749__lg__copier04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 18749__lg__copier04.wav; path = gamedata/samples/18749__lg__copier04.wav; sourceTree = "<group>"; };
+		6D90672216B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "50405__daddoit__chimes-part-6.wav"; path = "gamedata/samples/50405__daddoit__chimes-part-6.wav"; sourceTree = "<group>"; };
+		6D90672316B4AAF100BDE89B /* 170406__wind-chimes.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "170406__wind-chimes.wav"; path = "gamedata/samples/170406__wind-chimes.wav"; sourceTree = "<group>"; };
+		6D90672716B4AD5B00BDE89B /* Granulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Granulator.h; sourceTree = "<group>"; };
+		6D90672816B4AD5B00BDE89B /* Granulator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Granulator.mm; sourceTree = "<group>"; };
+		6D90672A16B4C06400BDE89B /* SoundCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCenter.h; sourceTree = "<group>"; };
+		6D90672B16B4C06400BDE89B /* SoundCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundCenter.mm; sourceTree = "<group>"; };
+		6D90673616B4FAF000BDE89B /* gl_util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gl_util.cpp; sourceTree = "<group>"; };
+		6D90673716B4FAF000BDE89B /* gl_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_util.h; sourceTree = "<group>"; };
 		6DB34F8D16B3879300452BDF /* SyncWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DB34F9116B3879300452BDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6DB34F9316B3879300452BDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +150,9 @@
 		6D90670816B4916300BDE89B /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				6D90672116B4AAF100BDE89B /* 18749__lg__copier04.wav */,
+				6D90672216B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav */,
+				6D90672316B4AAF100BDE89B /* 170406__wind-chimes.wav */,
 				6D90670916B4919B00BDE89B /* AlienNoise_Dm.wav */,
 				6D90670A16B4919B00BDE89B /* Am_descend_guitar.wav */,
 				6D90670B16B4919B00BDE89B /* arp_Dm.wav */,
@@ -185,6 +203,8 @@
 		6DB34F9B16B3879300452BDF /* SyncWorld */ = {
 			isa = PBXGroup;
 			children = (
+				6D90673616B4FAF000BDE89B /* gl_util.cpp */,
+				6D90673716B4FAF000BDE89B /* gl_util.h */,
 				6DB34F9C16B3879300452BDF /* Supporting Files */,
 				6DB34FA416B3879300452BDF /* TKAppDelegate.h */,
 				6DB34FA516B3879300452BDF /* TKAppDelegate.m */,
@@ -198,6 +218,10 @@
 				6D90671C16B495C600BDE89B /* SyncWorldGame.mm */,
 				6D90671E16B497D200BDE89B /* SampleBuffer.h */,
 				6D90671F16B497D200BDE89B /* SampleBuffer.mm */,
+				6D90672716B4AD5B00BDE89B /* Granulator.h */,
+				6D90672816B4AD5B00BDE89B /* Granulator.mm */,
+				6D90672A16B4C06400BDE89B /* SoundCenter.h */,
+				6D90672B16B4C06400BDE89B /* SoundCenter.mm */,
 			);
 			path = SyncWorld;
 			sourceTree = "<group>";
@@ -285,6 +309,9 @@
 				6D90671816B4919B00BDE89B /* Piano_Dm_F_Am.wav in Resources */,
 				6D90671916B4919B00BDE89B /* piano_notes.wav in Resources */,
 				6D90671A16B4919B00BDE89B /* synthHorns_CMaj7.wav in Resources */,
+				6D90672416B4AAF100BDE89B /* 18749__lg__copier04.wav in Resources */,
+				6D90672516B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav in Resources */,
+				6D90672616B4AAF100BDE89B /* 170406__wind-chimes.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +331,9 @@
 				6D9066FF16B47B9A00BDE89B /* RingBuffer.mm in Sources */,
 				6D90671D16B495C600BDE89B /* SyncWorldGame.mm in Sources */,
 				6D90672016B497D200BDE89B /* SampleBuffer.mm in Sources */,
+				6D90672916B4AD5B00BDE89B /* Granulator.mm in Sources */,
+				6D90672C16B4C06400BDE89B /* SoundCenter.mm in Sources */,
+				6D90673816B4FAF000BDE89B /* gl_util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

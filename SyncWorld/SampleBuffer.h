@@ -10,8 +10,12 @@
 
 @interface SampleBuffer : NSObject
 
+// audio data
 @property (nonatomic, assign) UInt32 numFrames;
 @property (nonatomic, readonly) float *data;
+
+// waveform preview
+// todo
 
 - (id) initFromFile: (NSString*)filename;
 
