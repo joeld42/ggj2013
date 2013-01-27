@@ -16,9 +16,11 @@
 
 @property (nonatomic, assign) GLKVector2 center;
 @property (nonatomic, assign) float radius;
+@property (nonatomic, assign) int iconIndex; 
 
 - (id)initWithSample: (SampleBuffer *)buffer;
 
-- (void)draw;
+- (void)drawIcon;
+- (void)drawWaveform;
 
 @end

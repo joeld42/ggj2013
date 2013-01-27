@@ -22,10 +22,15 @@ struct SoundCenterVert
 {
     BOOL _dirty;
 
-    GLuint _vbo;
-    GLuint _vertexBuffer;
+    GLuint _vboIcon;
+    GLuint _vertexBufferIcon;
 
+    GLuint _vboWaveform;
+    GLuint _vertexBufferWaveform;
+
+    
     SoundCenterVert *_vertDataRing;
+    SoundCenterVert *_vertDataIcon;
 }
 
 @property (nonatomic, strong) SampleBuffer *sample;
@@ -40,6 +45,7 @@ struct SoundCenterVert
 
 @synthesize center=_center;
 @synthesize radius=_radius;
+@synthesize iconIndex=_iconIndex;
 
 - (id)initWithSample: (SampleBuffer *)buffer
 {
@@ -55,16 +61,33 @@ struct SoundCenterVert
     return self;
 }
 
-- (void)draw
+- (void)drawIcon
 {
     if (_dirty)
     {
         [self _build];
     }
     
-    NSLog( @"Drawing soundCenter: (vbo %d)", _vbo);
+    NSLog( @"Drawing soundCenter Icon: (vbo %d)", _vboIcon);
     
-    glBindVertexArrayOES(_vbo);
+    glBindVertexArrayOES(_vboIcon);
+    
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+    
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4 );
+    
+    glBindVertexArrayOES(0);
+}
+
+- (void)drawWaveform
+{
+    if (_dirty)
+    {
+        [self _build];
+    }
+    
+    glBindVertexArrayOES(_vboWaveform );
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
@@ -74,10 +97,14 @@ struct SoundCenterVert
     glBindVertexArrayOES(0);
 }
 
+
 - (void) _build
 {
     _dirty = NO;
     
+    // ------------------
+    // Build waveform
+    // ------------------
     if (_vertDataRing) delete _vertDataRing;
     _vertDataRing = new SoundCenterVert[ NUM_SEGMENTS * 2 ];
     
@@ -97,12 +124,12 @@ struct SoundCenterVert
     }
     
     // Generate our VBO (todo: reuse vbo if we're modifying this)
-    glGenVertexArraysOES(1, &_vbo);
-    glBindVertexArrayOES(_vbo);
+    glGenVertexArraysOES(1, &_vboWaveform);
+    glBindVertexArrayOES(_vboWaveform);
     
-    glGenBuffers(1, &_vertexBuffer);
+    glGenBuffers(1, &_vertexBufferWaveform);
        
-    glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferWaveform );
     glBufferData(GL_ARRAY_BUFFER, sizeof(SoundCenterVert) * (NUM_SEGMENTS * 2), _vertDataRing, GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(GLKVertexAttribPosition);
@@ -111,7 +138,46 @@ struct SoundCenterVert
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(SoundCenterVert), BUFFER_OFFSET(8));
     
+    // ------------------
+    // Build Icon
+    // ------------------
+    if (_vertDataIcon) delete _vertDataIcon;
+    _vertDataIcon = new SoundCenterVert[ 4 ];
+    
+    float rv = (_radius * 0.5 );
+    float iconSz = 1.0 / 8.0; // 8x8 icons up on texture
+    float iconS = (_iconIndex / 8) * iconSz;
+    float iconT = (_iconIndex % 8) * iconSz;
+    _vertDataIcon[0].pos = GLKVector2Make( _center.x -1.0 * rv, _center.y -1.0 * rv );
+    _vertDataIcon[0].st = GLKVector2Make( iconS, iconT + iconSz );
+
+    _vertDataIcon[1].pos = GLKVector2Make( _center.x + 1.0 * rv, _center.y -1.0 * rv );
+    _vertDataIcon[1].st = GLKVector2Make( iconS + iconSz, iconT + iconSz );
+
+    _vertDataIcon[2].pos = GLKVector2Make( _center.x -1.0 * rv, _center.y + 1.0 * rv );
+    _vertDataIcon[2].st = GLKVector2Make( iconS, iconT );
+    
+    _vertDataIcon[3].pos = GLKVector2Make( _center.x + 1.0 * rv, _center.y + 1.0 * rv );
+    _vertDataIcon[3].st = GLKVector2Make( iconS + iconSz, iconT );
+
+    
+    // Generate our VBO (todo: reuse vbo if we're modifying this)
+    glGenVertexArraysOES(1, &_vboIcon);
+    glBindVertexArrayOES(_vboIcon);
+    
+    glGenBuffers(1, &_vertexBufferIcon);
+    
+    glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferIcon );
+    glBufferData(GL_ARRAY_BUFFER, sizeof(SoundCenterVert) * 4, _vertDataIcon, GL_STATIC_DRAW);
+    
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, sizeof(SoundCenterVert), BUFFER_OFFSET(0));
+    
+    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(SoundCenterVert), BUFFER_OFFSET(8));
+    
     glBindVertexArrayOES(0);
+
     
 }
 

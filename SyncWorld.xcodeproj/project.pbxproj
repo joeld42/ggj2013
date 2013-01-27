@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D0532AE16B50808006804EB /* bstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D0532AA16B50808006804EB /* bstrlib.c */; };
+		6D0532AF16B50808006804EB /* glsw.c in Sources */ = {isa = PBXBuildFile; fileRef = 6D0532AC16B50808006804EB /* glsw.c */; };
+		6D0532B716B50C08006804EB /* SyncWorld.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 6D0532B616B50C08006804EB /* SyncWorld.glsl */; };
+		6D0532CB16B50E08006804EB /* shader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D0532C916B50E08006804EB /* shader.mm */; };
+		6D0532CF16B51F21006804EB /* sound_icons.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D0532CE16B51F21006804EB /* sound_icons.png */; };
 		6D9066FC16B47B9A00BDE89B /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9066FD16B47B9A00BDE89B /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F716B47B9A00BDE89B /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9066FE16B47B9A00BDE89B /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9066F916B47B9A00BDE89B /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -49,6 +54,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D0532AA16B50808006804EB /* bstrlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bstrlib.c; sourceTree = "<group>"; };
+		6D0532AB16B50808006804EB /* bstrlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bstrlib.h; sourceTree = "<group>"; };
+		6D0532AC16B50808006804EB /* glsw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glsw.c; sourceTree = "<group>"; };
+		6D0532AD16B50808006804EB /* glsw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glsw.h; sourceTree = "<group>"; };
+		6D0532B616B50C08006804EB /* SyncWorld.glsl */ = {isa = PBXFileReference; explicitFileType = sourcecode.glsl; fileEncoding = 4; path = SyncWorld.glsl; sourceTree = "<group>"; };
+		6D0532C916B50E08006804EB /* shader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = shader.mm; sourceTree = "<group>"; };
+		6D0532CA16B50E08006804EB /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		6D0532CE16B51F21006804EB /* sound_icons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sound_icons.png; path = gamedata/sound_icons.png; sourceTree = "<group>"; };
 		6D9066F416B47B9A00BDE89B /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
 		6D9066F516B47B9A00BDE89B /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
 		6D9066F616B47B9A00BDE89B /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
@@ -123,6 +136,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D0532A916B50808006804EB /* glsw */ = {
+			isa = PBXGroup;
+			children = (
+				6D0532AA16B50808006804EB /* bstrlib.c */,
+				6D0532AB16B50808006804EB /* bstrlib.h */,
+				6D0532AC16B50808006804EB /* glsw.c */,
+				6D0532AD16B50808006804EB /* glsw.h */,
+			);
+			path = glsw;
+			sourceTree = "<group>";
+		};
+		6D0532CD16B51F16006804EB /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				6D0532CE16B51F21006804EB /* sound_icons.png */,
+			);
+			name = Textures;
+			sourceTree = "<group>";
+		};
 		6D9066F316B47B9A00BDE89B /* Novocaine */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +174,7 @@
 		6D90670716B4915900BDE89B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D0532CD16B51F16006804EB /* Textures */,
 				6D90670816B4916300BDE89B /* Samples */,
 			);
 			name = Resources;
@@ -169,9 +202,11 @@
 		6DB34F8216B3879300452BDF = {
 			isa = PBXGroup;
 			children = (
+				6D0532A916B50808006804EB /* glsw */,
 				6D90670716B4915900BDE89B /* Resources */,
 				6D9066F316B47B9A00BDE89B /* Novocaine */,
 				6DB34F9B16B3879300452BDF /* SyncWorld */,
+				6DB34F9C16B3879300452BDF /* Supporting Files */,
 				6DB34F9016B3879300452BDF /* Frameworks */,
 				6DB34F8E16B3879300452BDF /* Products */,
 			);
@@ -203,9 +238,11 @@
 		6DB34F9B16B3879300452BDF /* SyncWorld */ = {
 			isa = PBXGroup;
 			children = (
+				6D0532C916B50E08006804EB /* shader.mm */,
+				6D0532CA16B50E08006804EB /* shader.h */,
+				6D0532B616B50C08006804EB /* SyncWorld.glsl */,
 				6D90673616B4FAF000BDE89B /* gl_util.cpp */,
 				6D90673716B4FAF000BDE89B /* gl_util.h */,
-				6DB34F9C16B3879300452BDF /* Supporting Files */,
 				6DB34FA416B3879300452BDF /* TKAppDelegate.h */,
 				6DB34FA516B3879300452BDF /* TKAppDelegate.m */,
 				6DB34FAD16B3879300452BDF /* Shader.fsh */,
@@ -238,6 +275,7 @@
 				6DB34FAB16B3879300452BDF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = SyncWorld;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +350,8 @@
 				6D90672416B4AAF100BDE89B /* 18749__lg__copier04.wav in Resources */,
 				6D90672516B4AAF100BDE89B /* 50405__daddoit__chimes-part-6.wav in Resources */,
 				6D90672616B4AAF100BDE89B /* 170406__wind-chimes.wav in Resources */,
+				6D0532B716B50C08006804EB /* SyncWorld.glsl in Resources */,
+				6D0532CF16B51F21006804EB /* sound_icons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +374,9 @@
 				6D90672916B4AD5B00BDE89B /* Granulator.mm in Sources */,
 				6D90672C16B4C06400BDE89B /* SoundCenter.mm in Sources */,
 				6D90673816B4FAF000BDE89B /* gl_util.cpp in Sources */,
+				6D0532AE16B50808006804EB /* bstrlib.c in Sources */,
+				6D0532AF16B50808006804EB /* glsw.c in Sources */,
+				6D0532CB16B50E08006804EB /* shader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

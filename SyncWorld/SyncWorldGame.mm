@@ -11,20 +11,35 @@
 #import "SampleBuffer.h"
 #import "SoundCenter.h"
 #import "gl_util.h"
+#import "glsw.h"
+#import "shader.h"
 
 @interface SyncWorldGame ()
 {
     BOOL _doneInit;
+    
+    // Graphics resources
+    GLKMatrix4 _modelViewProjectionMatrix;
+    
+    GLuint _progSoundCtr;
+    GLuint _uparamSoundCtr_modelViewProjection;
 
+    GLuint _progDecal;
+    GLuint _uparamDecal_modelViewProjection;
+    GLuint _uparamDecal_baseTex;
+    
+    GLKTextureInfo *_texIdSoundIcons;
+    
+    // Audio resources
     RingBuffer *_ringBuffer;
     Novocaine *_audioManager;
-    //    AudioFileReader *fileReader;
 
     SampleBuffer *_testSample;
 
     NSMutableArray *_soundCtrs;
-
 }
+
+- (GLKTextureInfo *)_loadTexture: (NSString*)textureName;
 
 - (void) _initGame;
 
@@ -111,8 +126,27 @@
 {
     _doneInit = YES;
 
-    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"GGJ13_Theme" ofType:@"wav"];
+    // Init view
+    _modelViewProjectionMatrix = GLKMatrix4MakeOrtho(0, 1024, 0, 768, -1.0, 1.0);
     
+    // Init shaders
+    NSString *resPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingString: @"/"];
+    glswInit();
+    glswSetPath( [resPath UTF8String], ".glsl" );
+    
+    _progSoundCtr = loadShader( "SyncWorld.SoundCtr");
+    _uparamSoundCtr_modelViewProjection = glGetUniformLocation(_progSoundCtr, "modelViewProjectionMatrix");
+    NSLog( @"Loaded shader _progSoundCtr (%d)", _progSoundCtr );
+    
+    _progDecal = loadShader( "SyncWorld.Decal");
+    _uparamDecal_modelViewProjection = glGetUniformLocation( _progDecal, "modelViewProjectionMatrix");
+    _uparamDecal_baseTex = glGetUniformLocation( _progDecal, "sampler_baseTex");
+    
+    // Init textures
+    _texIdSoundIcons = [self _loadTexture: @"sound_icons" ];
+    
+    // Init samples
+    NSString *samplePath = [[NSBundle mainBundle] pathForResource:@"GGJ13_Theme" ofType:@"wav"];
     NSLog( @"Sample path is %@", samplePath );
     _testSample = [[SampleBuffer alloc] initFromFile:samplePath];
 
@@ -131,20 +165,55 @@
 
 - (void) render
 {
-//    NSLog( @"render" );
-    CHECKGL( "render");
-
     // Init first render (GL ctx active)
     if (!_doneInit) [self _initGame];
+    
+    glClearColor(0.2f, 0.2f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    // Draw all of the sound centers
+    // ====== Draw all of the sound centers
+    
+    // Draw the decals
+    glUseProgram( _progDecal );
+    glUniformMatrix4fv( _uparamDecal_modelViewProjection, 1, 0, _modelViewProjectionMatrix.m);
+    glBindTexture( GL_TEXTURE_2D, _texIdSoundIcons.name );
+	
+	glUniform1i( _uparamDecal_baseTex, 0 );
+
+    
     for (SoundCenter *ctr in _soundCtrs)
     {
-        [ctr draw];
+        [ctr drawIcon];
+    }
+    
+    // Draw the waveform parts
+    glUseProgram( _progSoundCtr );
+    glUniformMatrix4fv( _uparamSoundCtr_modelViewProjection, 1, 0, _modelViewProjectionMatrix.m);
+    
+    for (SoundCenter *ctr in _soundCtrs)
+    {
+        [ctr drawWaveform];
     }
 
     CHECKGL( "render done");
 }
 
+- (GLKTextureInfo *) _loadTexture: (NSString*)textureName
+{
+    NSError *error = nil;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:textureName ofType:@"png"];
+    NSLog( @"Loading texture at path %@", path );
+    
+    GLKTextureInfo *texInfo =  [GLKTextureLoader textureWithContentsOfFile:path
+                                                   options:nil error:&error];
+    
+    if (!texInfo)
+    {
+        NSLog( @"Failed to load texture '%@', error: %@", textureName, error );
+    }
+    
+    return texInfo;
+}
 
 @end
